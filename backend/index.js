@@ -41,3 +41,24 @@ app.get("/user", async (req, res) => {
     res.status(400).json({ Message: "You should check url please .... !" });
   }
 });
+app.put("/user/:id", async (req, res) => {
+  const { name, course, department } = req.body;
+  try {
+    const updatedDocument = await Student.findByIdAndUpdate(
+      req.params.id,
+      {
+        name,
+        course,
+        department,
+      },
+      { new: true }
+    );
+    if (!updatedDocument) {
+      return res.status(404).json({ Message: "Document not found" });
+    }
+    res.status(200).json(updatedDocument);
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({ Message: "Invalid ID or update details" });
+  }
+});
