@@ -62,3 +62,11 @@ app.put("/user/:id", async (req, res) => {
     res.status(400).json({ Message: "Invalid ID or update details" });
   }
 });
+app.delete("/user/:id", async (req, res) => {
+  try {
+    const delectUser = await Student.findByIdAndDelete(req.params.id);
+    res.status(200).json({ Message: "Student Delect Sucessfully" });
+  } catch (error) {
+    res.status(400).json({ Message: "Student Not Delect Sucessfully" });
+  }
+});
