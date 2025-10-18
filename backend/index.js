@@ -18,9 +18,6 @@ studentSchema = new mongoose.Schema({
   department: { type: String, required: true },
 });
 const Student = mongoose.model("Student", studentSchema);
-app.get("/", (req, res) => {
-  res.status(200).send({ Message: "Frontent_Backend_BasicProject" });
-});
 app.post("/user", async (req, res) => {
   try {
     const { regNumber, name, course, department } = req.body;
