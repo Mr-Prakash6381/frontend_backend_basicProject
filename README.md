@@ -15,10 +15,8 @@
 ## Frontend Setup
 
 1.First, set up the basic frontend environment.
-2.Run the command:
-    npm create vite@latest
-3. Install the required packages:
-    npm install tailwindcss axios
+2.Run the command: npm create vite@latest
+3. Install the required packages: npm install tailwindcss axios
 4. Import axios, useState, and useEffect in your React component.
 5. Create a form with the required input fields (e.g., Reg Number, Name, Course, Department).
 6.Store all input field values using useState and handle changes with onChange listeners.
